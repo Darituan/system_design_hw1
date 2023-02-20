@@ -5,7 +5,7 @@ import requests
 from flask import Flask, jsonify, request
 
 API_TOKEN = ""
-RSA_API_KEY = ""
+API_KEY = ""
 
 app = Flask(__name__)
 
@@ -13,7 +13,11 @@ app = Flask(__name__)
 def get_weather(location: str, date: str):
     url_base_url = "http://api.weatherapi.com/v1/history.json"
     
-    parameters = {}
+    parameters = {
+        "key":API_KEY,
+        "q":location,
+        "dt":date
+    }
 
     payload = {}
     headers = {}
