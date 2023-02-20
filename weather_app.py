@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 def get_weather(location: str, date: str):
-    url_base_url = "http://api.weatherapi.com/v1/history.json"
+    url = "http://api.weatherapi.com/v1/history.json"
     
     parameters = {
         "key":API_KEY,
